@@ -1,0 +1,37 @@
+int precio;
+            int metodo;
+            int efectivo;
+            double tarnum;
+            Console.WriteLine("Precio Producto:");
+            precio = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Metodo de pago:");
+            Console.WriteLine("Digite 1 para pagar con tarjeta");
+            Console.WriteLine("Digite 2 para pagar con efectivo");
+            metodo = Convert.ToInt32(Console.ReadLine());
+
+            if (metodo == 1 & metodo < 2 & metodo > 0)
+            {
+                Console.WriteLine("Ingresar numeros 12 Digitos de tarjeta");
+                tarnum = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Gracias por su compra");
+
+                Console.WriteLine("Precio Producto = " + precio);
+                Console.WriteLine("Pago tarjeta de = " + precio);
+
+                Console.ReadKey();
+            }
+            else if(metodo < 3 & metodo > 1)
+            {
+                Console.WriteLine("Efectivo");
+                efectivo = Convert.ToInt32(Console.ReadLine());
+                int cambio = precio - efectivo;
+
+                Console.WriteLine("Precio Prducto = " + precio);
+                Console.WriteLine("Pago efectivo de = " + efectivo);
+                Console.WriteLine("Cambio = " + cambio);
+                Console.ReadKey();
+            }
+
+
+
+            Console.ReadKey();
