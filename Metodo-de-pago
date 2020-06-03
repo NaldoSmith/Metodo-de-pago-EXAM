@@ -1,4 +1,15 @@
-int precio;
+using System;
+using System.Dynamic;
+using System.Security.Cryptography.X509Certificates;
+
+namespace Metodo_de_pago
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int precio;
             int metodo;
             int efectivo;
             double tarnum;
@@ -11,14 +22,25 @@ int precio;
 
             if (metodo == 1 & metodo < 2 & metodo > 0)
             {
-                Console.WriteLine("Ingresar numeros 12 Digitos de tarjeta");
+                Console.WriteLine("Ingresar los 12 Digitos de la tarjeta");
                 tarnum = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("Gracias por su compra");
+                
+                do
+                {
+                    Console.WriteLine("El numero de la tarjeta ingresada exede o carece de uno o mas digitos");
+                    Console.WriteLine("Ingresar los 12 Digitos de la tarjeta");
+                    tarnum = Convert.ToDouble(Console.ReadLine());
+                } while(tarnum > 999999999999 | tarnum < 100000000000);
 
-                Console.WriteLine("Precio Producto = " + precio);
-                Console.WriteLine("Pago tarjeta de = " + precio);
+                if (tarnum > 99000000000 & tarnum <= 999999999999){
+                 Console.WriteLine("Precio Prducto = " + precio);
+                 Console.WriteLine("Pago tarjeta de = " + precio);
+                 
 
-                Console.ReadKey();
+                 Console.ReadKey();
+                }
+                 
+
             }
             else if(metodo < 3 & metodo > 1)
             {
@@ -32,6 +54,9 @@ int precio;
                 Console.ReadKey();
             }
 
-
+            Console.WriteLine("Gracias por su compra");
 
             Console.ReadKey();
+        }
+    }
+}
